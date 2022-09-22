@@ -1,7 +1,11 @@
  # Exif remover 
 A python tool with gui to remove exif/metadata from a picture
 
+Requirements: 
 
+- pip install tkinter 
+
+- pip install sv_ttk
 
 Run program:
 
