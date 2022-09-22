@@ -51,11 +51,14 @@ def main():
     print(file)
     image = Image.open(file)
     # strip exif
+    if image.mode in ("RGBA", "P"):
+        image = image.convert("RGB")
     data = list(image.getdata())
     image_wo_exif = Image.new(image.mode, image.size)
     image_wo_exif.putdata(data)
     image_wo_exif.save(f"{file}_no_exif.jpg")  # add "_no_exif.jpg" to the
-                                               # end of the file w/o exif.
+# end of the file w/o exif.
+
     print("Done")
 
 
